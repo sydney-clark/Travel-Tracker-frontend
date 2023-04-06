@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import MapSection from './components/map/Map'
-import SearchBox from "./components/SearchBox";
+//import MapSection from './components/map/Map'
+import OldMap from "./components/old_map";
 
 //Components
 import Add from "./components/Add";
@@ -67,8 +67,7 @@ const App = () => {
         <h1 className="pageTitle">Travel Tracker</h1>
         <Add handleCreate={handleCreate} />
       </section>
-      <SearchBox/>
-    <MapSection location={location} zoomLevel={17} /> {/* include it here */}
+      <OldMap/>
     </>
   );
 };
