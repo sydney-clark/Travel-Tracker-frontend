@@ -1,3 +1,80 @@
+@mixin buttons {
+  background-image: linear-gradient(to right, #2eb872, #55e0a3, #379956);
+}
+
+@mixin forms {
+  font-size: 30px;
+  color: #d60808;
+}
+
+@mixin boxes {
+  width: 300px;
+  height: 20px;
+  border: 1px black solid;
+}
+
+/////////////Page Title////////////////
+.pageTitle {
+  text-align: center;
+  font-size: 60px;
+  color: #00f5d9;
+  text-shadow:
+    -2px -2px 0 #005ff7,
+    2px -2px 0 #005ff7,
+    -2px 2px 0 #005ff7,
+    2px 2px 0 #005ff7;
+}
+
+////////////Add form/////////////////
+.latAndLongSearch {
+  text-align: center;
+  
+}
+
+.location-search-input {
+  @include boxes()
+}
+////////////Add form/////////////////
+.form {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.formControl {
+  @include boxes()
+}
+
+.submitBtn {
+  @include buttons();
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.submitBtn:hover{
+  cursor: pointer;
+}
+
+
+/////////////Edit Form////////////////
+.editForm {
+  @include boxes()
+} 
+
+.editBtn {
+  @include buttons();
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.editBtn:hover{
+  cursor: pointer;
+}
+
+///////Map///////////
+.css-1u3fsso {
+  margin-top: 270px;
+} 
+
 .map-h2 {
   text-transform: uppercase;
   font-size: 1rem;
@@ -44,3 +121,4 @@
     font-size: 10vw;
   }
 }
+

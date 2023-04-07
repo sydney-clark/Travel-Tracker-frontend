@@ -20,9 +20,9 @@ import {
 } from '@react-google-maps/api'
 import { useRef, useState } from 'react'
 
-const center = { lat: 48.8584, lng: 2.2945 }
+const center = { lat: 48.8584, lng: 2.2945 } //bring in location from add form?
 
-function OldMap() {
+function Map() {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries: ['places'],
@@ -149,4 +149,4 @@ function OldMap() {
   )
 }
 
-export default OldMap
+export default Map
