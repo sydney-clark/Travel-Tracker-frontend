@@ -19,6 +19,7 @@ const location = {
 };
 
 const App = () => {
+
   let [travel, setTravel] = useState([]);
   let [address, setAddress] = useState("");
   let [coordinates, setCoordinates] = useState({
@@ -113,7 +114,7 @@ const App = () => {
                     : "suggestion-item";
                   // inline style for demonstration purpose
                   const style = suggestion.active
-                    ? { backgroundColor: "red", cursor: "pointer" }
+                    ? { backgroundColor: "green", cursor: "pointer" }
                     : { backgroundColor: "yellow", cursor: "pointer" };
                   return (
                     <div
@@ -134,10 +135,13 @@ const App = () => {
         <br />
 
         <Add handleCreate={handleCreate} />
-        <Edit className="editBtn" handleUpdate={handleUpdate} travel={travel} />
+        <Edit className="editBtn" handleUpdate={handleUpdate} travel={travel} /><br/>
+        <div>
+        <button className='deleteBtn' onClick={handleDelete} value={travel.id}>Delete Travel Pin</button>
+        </div>
         <br />
       </section>
-      <Map />
+      <Map searchCoord={coordinates}/>
     </>
   );
 };

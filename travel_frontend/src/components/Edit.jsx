@@ -67,6 +67,7 @@ const Edit = (props) => {
 					/>
 					<br/>
 					<input type='submit' className="editBtn"/>
+                    <br/>
 				</form>
 			</details>
 		</>

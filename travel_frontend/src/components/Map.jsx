@@ -18,11 +18,24 @@ import {
   Autocomplete,
   DirectionsRenderer,
 } from '@react-google-maps/api'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-const center = { lat: 48.8584, lng: 2.2945 } //bring in location from add form?
 
-function Map() {
+function Map({searchCoord}) {
+
+  const [center, setCenter] = useState ({ lat: 48.8584, lng: 2.2945 }) //bring in location from add form?
+
+  useEffect(() => {
+  }, [center]);
+
+const changeCenter = () => {
+  // setCenter({ lat: 41.8902102, lng: 12.4922309 });
+  console.log(searchCoord)
+  setCenter( searchCoord );
+  
+}
+
+
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries: ['places'],
@@ -123,6 +136,9 @@ function Map() {
           <ButtonGroup>
             <Button colorScheme='pink' type='submit' onClick={calculateRoute}>
               Calculate Route
+            </Button>
+            <Button colorScheme='pink' type='submit' onClick={changeCenter}>
+              Change Lat/Long
             </Button>
             <IconButton
               aria-label='center back'
