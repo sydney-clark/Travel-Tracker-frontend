@@ -21,6 +21,7 @@ const location = {
 const App = () => {
 
   let [travel, setTravel] = useState([]);
+  let [marker, setMarker] = useState([]);
   let [address, setAddress] = useState("");
   let [coordinates, setCoordinates] = useState({
     lat: null,
@@ -35,8 +36,9 @@ const App = () => {
     setCoordinates(ll);
   };
 
+  //getting my Travel model//
   const handleCreate = (newTravel) => {
-    axios.post("http://localhost:8000/api/travelApp", newTravel).then((res) => {
+    axios.post("http://localhost:8000/api/travelList", newTravel).then((res) => {
       console.log(res);
       getData();
     });
@@ -44,7 +46,7 @@ const App = () => {
 
   const getData = () => {
     axios
-      .get("http://localhost:8000/api/travelApp") // backend render url will go here after launching live backend
+      .get("http://localhost:8000/api/travelList") // backend render url will go here after launching live backend
       .then(
         (res) => setTravel(res.data),
         (err) => console.error(err)
@@ -52,8 +54,28 @@ const App = () => {
       .catch((error) => console.error(error));
   };
 
-  // delete function
+  //getting my marker model//
+  const create = (newMarker) => {
+    axios.post("http://localhost:8000/api/markerList", newMarker).then((res) => {
+      console.log(res);
+      getMarkers();
+    });
+  };
 
+
+  const getMarkers = () => {
+    axios
+      .get("http://localhost:8000/api/markerList") // backend render url will go here after launching live backend
+      .then(
+        (res) => setMarker(res.data),
+        (err) => console.error(err),
+        console.log(setMarker)
+      )
+      .catch((error) => console.error(error));
+  };
+
+
+  // delete function
   const handleDelete = (event) => {
     axios
       .delete(`http://localhost:8000/api/travelApp/${event.target.value}`)
@@ -135,6 +157,7 @@ const App = () => {
         <br />
 
         <Add handleCreate={handleCreate} />
+        <button className='editBtn' onClick={create}> New Marker</button>
         <Edit className="editBtn" handleUpdate={handleUpdate} travel={travel} /><br/>
         <div>
         <button className='deleteBtn' onClick={handleDelete} value={travel.id}>Delete Travel Pin</button>
