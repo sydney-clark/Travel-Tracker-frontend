@@ -23,7 +23,7 @@ import { useEffect, useRef, useState } from 'react'
 
 function Map({searchCoord}) {
 
-  const [center, setCenter] = useState ({ lat: 48.8584, lng: 2.2945 }) //bring in location from add form?
+  const [center, setCenter] = useState ({ lat: 48.8584, lng: 2.2945 }) //bring in location from add form? //wont need this after mapping over markers array
 
   useEffect(() => {
   }, [center]);
@@ -102,7 +102,8 @@ const changeCenter = () => {
           }}
           onLoad={map => setMap(map)}
         >
-          <Marker position={center} />
+          {/* use map.(arrayname) */}
+          <Marker position={center} /> 
           {directionsResponse && (
             <DirectionsRenderer directions={directionsResponse} />
           )}
