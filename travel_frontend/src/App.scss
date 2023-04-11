@@ -25,6 +25,15 @@
     2px 2px 0 #005ff7;
 }
 
+////////////New marker/////////////////
+.newMarkerBtn {
+  @include buttons();
+}
+
+.markerBtn {
+  text-align: center;
+}
+
 ////////////Add form/////////////////
 .latAndLongSearch {
   text-align: center;

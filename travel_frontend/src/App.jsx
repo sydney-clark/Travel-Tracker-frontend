@@ -158,8 +158,8 @@ const App = () => {
         </section> 
         <br />
 
+        <div className="markerBtn"><button className='newMarkerBtn' onClick={create}> New Marker</button></div>
         <Add handleCreate={handleCreate} />
-        <button className='editBtn' onClick={create}> New Marker</button>
         <Edit className="editBtn" handleUpdate={handleUpdate} travel={travel} /><br/>
         <div>
         <button className='deleteBtn' onClick={handleDelete} value={travel.id}>Delete Travel Pin</button>
