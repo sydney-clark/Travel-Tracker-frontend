@@ -69,45 +69,12 @@ const App = () => {
         .then((res)=> {
            console.log(res.data) // checking to make sure all objects look correct
            } ,
-           (res) => setMarkers(res.data),
-           (err) => console.error(err), // pushing to my Markers array
+           (res) => setMarkers(res.data), // pushing to my Markers array
+           (err) => console.error(err), 
            console.log(markers) // checking the content of my Markers array
       )
     });
   };
-
-  // const create = () => {
-  //   console.log(coordinates.lat)
-  //   // posting my new Marker object to my DB
-  //   axios.post("http://localhost:8000/api/markerList",
-  //    {lat: coordinates.lat, 
-  //     lng: coordinates.lng}
-  //     )
-  //   .then((res) => { 
-  //       console.log(res); // logging my newly created object to make sure it's correct
-  //       axios.get("http://localhost:8000/api/markerList")   // getting all my Marker objects          
-  //            .then((res)=> {
-  //               console.log(res.data) // checking to make sure all objects look correct
-  //               setMarkers(res.data) // pushing to my Markers array
-  //               console.log(markers) // checking the content of my Markers array
-  //           }
-  //     )
-  //   });
-  // };
-
-
-  // const getMarkers = () => {
-  //   axios
-  //     .get("http://localhost:8000/api/markerList") // backend render url will go here after launching live backend
-  //     .then((res)=> {
-  //       console.log(res.data)
-  //     } ,
-  //       (res) => setMarkers(res.data),
-  //       (err) => console.error(err),
-  //       console.log(setMarkers)
-  //     )
-  //     // .catch((error) => console.error(error));
-  // };
 
 
   // delete function
