@@ -21,7 +21,7 @@ const location = {
 const App = () => {
 
   let [travel, setTravel] = useState([]);
-  let [markers, setMarkers] = useState([]);
+  const [markers, setMarkers] = useState([]);
   let [address, setAddress] = useState("");
   let [coordinates, setCoordinates] = useState({
     lat: "",
@@ -55,27 +55,26 @@ const App = () => {
   };
 
  // getting my marker model//
-  const create = () => {
-    console.log(coordinates.lat)
-    // console.log(markers)
-    // console.log(testObj)
+  const createData = () => {
+    console.log(markers)
     axios.post("http://localhost:8000/api/markerList", //posting new marker object to my database
      { lat: coordinates.lat, 
        lng: coordinates.lng}
       )
     .then((res) => { //shows new object just made
-        console.log(res); // logging my newly created object to make sure it's correct
-        axios.get("http://localhost:8000/api/markerList") // backend render url will go here after launching live backend, getting all my Marker objects
-        .then((res)=> {
-           console.log(res.data) // checking to make sure all objects look correct
-           } ,
-           (res) => setMarkers(res.data), // pushing to my Markers array
-           (err) => console.error(err), 
-           console.log(markers) // checking the content of my Markers array
-      )
-    });
-  };
+      getMarkers()
+    })
+    };
+  
 
+const getMarkers = () => {
+ axios.get("http://localhost:8000/api/markerList")
+ .then((res)=> {
+  console.log(res.data)
+  setMarkers(res.data)
+  console.log(markers)
+ })
+} 
 
   // delete function
   const handleDelete = (event) => {
@@ -101,6 +100,7 @@ const App = () => {
 
   useEffect(() => {
     getData();
+    getMarkers();
   }, []);
 
   return (
@@ -158,7 +158,7 @@ const App = () => {
         </section> 
         <br />
 
-        <div className="markerBtn"><button className='newMarkerBtn' onClick={create}> New Marker</button></div>
+        <div className="markerBtn"><button className='newMarkerBtn' onClick={createData}> New Marker</button></div>
         <Add handleCreate={handleCreate} />
         <Edit className="editBtn" handleUpdate={handleUpdate} travel={travel} /><br/>
         <div>
@@ -166,6 +166,7 @@ const App = () => {
         </div>
         <br />
       </section>
+      
       <Map searchCoord={coordinates} markers={markers}/>
     </>
   );
