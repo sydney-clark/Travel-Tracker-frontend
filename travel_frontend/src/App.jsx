@@ -166,7 +166,7 @@ const App = () => {
         </div>
         <br />
       </section>
-      <Map searchCoord={coordinates}/>
+      <Map searchCoord={coordinates} markers={markers}/>
     </>
   );
 };
