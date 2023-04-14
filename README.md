@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Travel-Tracker-Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Node list](#node-list)
+- [Collaborators](#Collators)
+- [Instructions for running](#instructions-for-running)
+- [Approach taken](#approach-taken)
+- [User stories](#user-stories)
+- [Wire framework](#wire-framework)
+- [Live link](#live-link)
+- [Stretch goals](#stretch-goals)
 
-In the project directory, you can run:
+## Node list
 
-### `npm start`
+- axios
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- react bootstrap
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- sass
 
-### `npm test`
+- Install project with
+  ```sh
+      npm i
+  ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Collaborators
 
-### `npm run build`
+- Sydney Clark
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instructions for running
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. After cloning down from git hub make sure your node is running the right version (node v19.4.0) and run nmp i to install everything needed to run this application
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Type in terminal npm start, but make sure your back end is running first
 
-### `npm run eject`
+## Approach taken
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- I started off by making two models with the lat and lng fields in order to populate markers on my google maps api. Then I added a coordinates finder, that allows you to type in a place and get the lat/long coordinates. That gets stored in the database on my backend, then when you click the add new marker button, it adds it ontop of my google maps api. Then I went through and made the app meet mvp.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Unsolved problems
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- I wanted to add a form that would be able to add extra info to each individual marker when you click on that specific marker.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## User stories
 
-## Learn More
+- As a user I should be able to look up any place in the world and get the latitude/longitude coordinates for it.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- As a user I should be able to add a new marker to my google maps.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- As a user I should be able to calculate routes on the map to see the distance in miles.
 
-### Code Splitting
+## Wire Framework
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<img src="https://i.imgur.com/0jTu1tR.png" width=400 height=500/>
 
-### Analyzing the Bundle Size
+## Live link
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- backend - https://travel-tracker-backend.onrender.com
 
-### Making a Progressive Web App
+- frontend - https://travel-tracker-frontend.onrender.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Stretch goals
 
-### Advanced Configuration
+- User login {} and authentication {}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Click on marker on the map and extra info for that place pops up
