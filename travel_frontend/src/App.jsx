@@ -136,7 +136,6 @@ const getMarkers = () => {
                   const className = suggestion.active
                     ? "suggestion-item--active"
                     : "suggestion-item";
-                  // inline style for demonstration purpose
                   const style = suggestion.active
                     ? { backgroundColor: "green", cursor: "pointer" }
                     : { backgroundColor: "yellow", cursor: "pointer" };
@@ -159,10 +158,10 @@ const getMarkers = () => {
         <br />
 
         <div className="markerBtn"><button className='newMarkerBtn' onClick={createData}> New Marker</button></div>
-        <Add handleCreate={handleCreate} />
-        <Edit className="editBtn" handleUpdate={handleUpdate} travel={travel} /><br/>
+        {/* <Add handleCreate={handleCreate} /> */}
+        {/* <Edit className="editBtn" handleUpdate={handleUpdate} travel={travel} /><br/> */}
         <div>
-        <button className='deleteBtn' onClick={handleDelete} value={travel.id}>Delete Travel Pin</button>
+        {/* <button className='deleteBtn' onClick={handleDelete} value={travel.id}>Delete Travel Pin</button> */}
         </div>
         <br />
       </section>

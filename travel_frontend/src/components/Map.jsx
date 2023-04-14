@@ -23,14 +23,9 @@ import { useEffect, useRef, useState } from "react";
 function Map({ searchCoord, markers }) {
   const [center, setCenter] = useState({ lat: 47.6074002, lng: -122.3429559 }); //bring in location from add form? //wont need this after mapping over markers array
   useEffect(() => {}, [center]);
-  // const [popMarkers, setPopMarkers] = useState({...markers});
-  // useEffect(() => {}, [popMarkers]);
-  //  const markersArray = [{lat: markers.lat, lng: markers.lng}];
-  //  console.log(markersArray);
   console.log(markers);
 
   const changeCenter = () => {
-    // setCenter({ lat: 41.8902102, lng: 12.4922309 });
     console.log(searchCoord);
     setCenter(searchCoord);
   };
@@ -102,7 +97,6 @@ function Map({ searchCoord, markers }) {
           }}
           onLoad={(map) => setMap(map)}
         >
-          {/* use map.(arrayname) */}
           
           {console.log(center)}
             {console.log(markers)}
