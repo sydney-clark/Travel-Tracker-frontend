@@ -38,7 +38,7 @@ const App = () => {
 
   //getting my Travel model//
   const handleCreate = (newTravel) => {
-    axios.post("http://localhost:8000/api/travelList", newTravel).then((res) => {
+    axios.post("https://travel-tracker-backend.onrender.com/api/travelList", newTravel).then((res) => {
       console.log(res);
       getData();
     });
@@ -46,7 +46,7 @@ const App = () => {
 
   const getData = () => {
     axios
-      .get("http://localhost:8000/api/travelList") // backend render url will go here after launching live backend
+      .get("https://travel-tracker-backend.onrender.com/api/travelList") // backend render url will go here after launching live backend
       .then(
         (res) => setTravel(res.data),
         (err) => console.error(err)
@@ -57,7 +57,7 @@ const App = () => {
  // getting my marker model//
   const createData = () => {
     console.log(markers)
-    axios.post("http://localhost:8000/api/markerList", //posting new marker object to my database
+    axios.post("https://travel-tracker-backend.onrender.com/api/markerList", //posting new marker object to my database
      { lat: coordinates.lat, 
        lng: coordinates.lng}
       )
@@ -68,7 +68,7 @@ const App = () => {
   
 
 const getMarkers = () => {
- axios.get("http://localhost:8000/api/markerList")
+ axios.get("https://travel-tracker-backend.onrender.com/api/markerList")
  .then((res)=> {
   console.log(res.data)
   setMarkers(res.data)
@@ -79,7 +79,7 @@ const getMarkers = () => {
   // delete function
   const handleDelete = (event) => {
     axios
-      .delete(`http://localhost:8000/api/travelApp/${event.target.value}`)
+      .delete(`https://travel-tracker-backend.onrender.com/travelApp/${event.target.value}`)
       .then((res) => {
         getData();
       });
@@ -90,7 +90,7 @@ const getMarkers = () => {
     console.log(editConstruction);
     axios
       .put(
-        `http://localhost:8000/api/travelApp/${editConstruction.id}`,
+        `https://travel-tracker-backend.onrender.com/travelApp/${editConstruction.id}`,
         editConstruction
       )
       .then((res) => {
