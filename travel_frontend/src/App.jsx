@@ -137,8 +137,8 @@ const getMarkers = () => {
                     ? "suggestion-item--active"
                     : "suggestion-item";
                   const style = suggestion.active
-                    ? { backgroundColor: "green", cursor: "pointer" }
-                    : { backgroundColor: "yellow", cursor: "pointer" };
+                    ? { backgroundColor: "#ff8260", cursor: "pointer" }
+                    : { backgroundColor: "#c24d2c", cursor: "pointer" };
                   return (
                     <div
                       {...getSuggestionItemProps(suggestion, {

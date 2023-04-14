@@ -9,8 +9,15 @@
 
 @mixin boxes {
   width: 300px;
-  height: 20px;
-  border: 1px black solid;
+  height: 25px;
+  border: 2px black solid;
+}
+
+/////////////Background////////////////
+#root {
+  background-image: url('https://i.imgur.com/u4nxOxL.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 /////////////Page Title////////////////
@@ -28,6 +35,9 @@
 ////////////New marker/////////////////
 .newMarkerBtn {
   @include buttons();
+  border: 2px black solid;
+  width: 125px;
+  height: 30px;
 }
 
 .markerBtn {
@@ -37,7 +47,8 @@
 ////////////Add form/////////////////
 .latAndLongSearch {
   text-align: center;
-  
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .location-search-input {

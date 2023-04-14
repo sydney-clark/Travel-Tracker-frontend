@@ -138,11 +138,11 @@ function Map({ searchCoord, markers }) {
           </Box>
 
           <ButtonGroup>
-            <Button colorScheme="pink" type="submit" onClick={calculateRoute}>
+            <Button colorScheme="green" type="submit" onClick={calculateRoute}>
               Calculate Route
             </Button>
-            <Button colorScheme="pink" type="submit" onClick={changeCenter}>
-              Change Lat/Long
+            <Button colorScheme="green" type="submit" onClick={changeCenter}>
+              Add Marker
             </Button>
             <IconButton
               aria-label="center back"
