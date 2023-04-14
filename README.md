@@ -52,7 +52,7 @@
 
 ## Wire Framework
 
-<img src="https://i.imgur.com/0jTu1tR.png" width=400 height=500/>
+<img src="https://i.imgur.com/0jTu1tR.png" width=700 height=500/>
 
 ## Live link
 
