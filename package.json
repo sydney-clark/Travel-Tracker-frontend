@@ -50,5 +50,8 @@
   "devDependencies": {
     "@iconify/icons-mdi": "^1.2.44",
     "@iconify/react": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=19.8.1"
   }
 }
